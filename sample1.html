@@ -29,10 +29,11 @@
     var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
   
     // 箱を作成
-    var geometry = new THREE.THREE.OctahedronGeometry(100, 1);
-    var material = new THREE.MeshPhongMaterial({ color: 0xffffff });
+    var geometry = new THREE.THREE.OctahedronGeometry(200);
+    var material = new THREE.MeshLambertMaterial( { color: 0x008866, wireframe:false } );
+    //var material = new THREE.MeshPhongMaterial({ color: 0xffffff });
     var box = new THREE.Mesh(geometry, material);
-    box.position.set(0,0,-5);
+    //box.position.set(0,0,-5);
     
     scene.add(box);
   
@@ -47,8 +48,8 @@
       requestAnimationFrame(update);
   
       // 箱を回転させる
-      box.rotation.x += 0.01;
-      box.rotation.y += 0.01;
+      //box.rotation.x += 0.01;
+      //box.rotation.y += 0.01;
   
       renderer.render(scene, camera);
     };
