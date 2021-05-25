@@ -31,9 +31,9 @@
     // 箱を作成
     var geometry = new THREE.THREE.OctahedronGeometry(100);
     var material = new THREE.MeshPhongMaterial({ color: 0xffffff });
-    var octahedron = new THREE.Mesh(geometry, material);
-    octahedron.position.z = -5;
-    scene.add(octahedron);
+    //var box = new THREE.Mesh(geometry, material);
+    //box.position.z = -5;
+    scene.add(geometry);
   
     // 平行光源
     var directionalLight = new THREE.DirectionalLight(0xffffff);
