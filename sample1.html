@@ -28,9 +28,9 @@
     // カメラを作成
     var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
   
-    // 箱を作成
+    // 正八面体を作成
     var geometry = new THREE.OctahedronGeometry(1, 1, 1);
-    var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
+    var material = new THREE.MeshPhongMaterial({ color: 0xffffff });
     var octahedron = new THREE.Mesh(geometry, material);
     octahedron.position.z = -5;
     scene.add(octahedron);
