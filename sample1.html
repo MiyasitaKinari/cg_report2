@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>sample6</title>
+  <title>sample1</title>
 
   <!-- three.jsを読み込む(ローカル) -->
   <!-- <script src="./three.js"></script> -->
@@ -31,7 +31,7 @@
 //ドーナッツ
 var torusGeometry = new THREE.TorusGeometry( 0.5, 0.2, 6, 12 ); 
 //半径、ドーナッツの太さ、ドーナッツのチューブ方向の分割数、水平方向の分割数
-var torusMaterial = new THREE. MeshPhongMaterial( { color: 0x0000ff } );
+var torusMaterial = new THREE. MeshPhongMaterial( { color: 0xffffff } );
 var torus = new THREE.Mesh( torusGeometry, torusMaterial );
 torus.position.set( 0, 0, -5);
 scene.add( torus );
