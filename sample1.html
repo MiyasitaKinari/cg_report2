@@ -72,9 +72,13 @@
     var update = function() {
       requestAnimationFrame(update);
       
-      //箱を回転させる
-      box.rotation.x += 0.01;
-      box.rotation.y += 0.01;
+      //箱1を回転させる
+      box1.rotation.x += 0.01;
+      box1.rotation.y += 0.01;
+      
+      //箱2を回転させる
+      box2.rotation.x += 0.01;
+      box2.rotation.y += 0.01;
   
       // ドーナッツを回転させる
       torus.rotation.x += 0.02;
