@@ -28,13 +28,21 @@
     // カメラを作成
     var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
     
-    //箱を作成
-    var geometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
-    var material = new THREE.MeshPhongMaterial({ color: 0xffffff });
-    var box = new THREE.Mesh(geometry, material);
-    box.position.x = 1;
-    box.position.z = -5;
-    scene.add(box);
+    //箱1を作成
+    var geometry1 = new THREE.BoxGeometry(0.5, 0.5, 0.5);
+    var material1 = new THREE.MeshPhongMaterial({ color: 0xffffff });
+    var box1 = new THREE.Mesh(geometry1, material1);
+    box1.position.x = 1;
+    box1.position.z = -5;
+    scene.add(box1);
+    
+    //箱2を作成
+    var geometry2 = new THREE.BoxGeometry(0.5, 0.5, 0.5);
+    var material2 = new THREE.MeshPhongMaterial({ color: 0xffffff });
+    var box2 = new THREE.Mesh(geometry2, material2);
+    box2.position.x = -1;
+    box2.position.z = -5;
+    scene.add(box2);
   
     //ドーナッツ
     var torusGeometry = new THREE.TorusGeometry( 0.25, 0.1, 16, 100 ); 
@@ -50,7 +58,7 @@
   
     // 平行光源1
     var directionalLight1 = new THREE.DirectionalLight(0xffffff);
-    directionalLight1.position.set(1, 1, 1);
+    directionalLight1.position.set(2, 2, 2);
     // シーンに追加
     scene.add(directionalLight1);
     
@@ -69,8 +77,8 @@
       box.rotation.y += 0.01;
   
       // ドーナッツを回転させる
-      torus.rotation.x += 0.01;
-      torus.rotation.y += 0.01;
+      torus.rotation.x += 0.02;
+      torus.rotation.y += 0.02;
   
       renderer.render(scene, camera);
     };
