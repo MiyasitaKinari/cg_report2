@@ -30,7 +30,7 @@
     
     //箱を作成
     var geometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
-    var material = new THREE.MeshPhongMaterial({ color: 0xffffff });
+    var material = new THREE.MeshPhongMaterial({ color: 0xfbfaf3 });
     var box = new THREE.Mesh(geometry, material);
     box.position.x = 1;
     box.position.z = -5;
@@ -39,7 +39,7 @@
     //角錐を作成
     var coneGeometry = new THREE.ConeGeometry( 0.25, 0.5, 5 ); 
     //半径、高さ、底面の分割数
-    var coneMaterial = new THREE. MeshPhongMaterial( {color: 0xffffff} );
+    var coneMaterial = new THREE. MeshPhongMaterial( {color: 0xfbfaf3} );
     var cone = new THREE.Mesh( coneGeometry, coneMaterial );
     cone.position.set( -1, 0, -5 );
     scene.add( cone );
@@ -47,7 +47,7 @@
     //トーラスを作成
     var torusGeometry = new THREE.TorusGeometry( 0.25, 0.1, 16, 100 ); 
     //半径、ドーナッツの太さ、ドーナッツのチューブ方向の分割数、水平方向の分割数
-    var torusMaterial = new THREE. MeshPhongMaterial( { color: 0xffffff } );
+    var torusMaterial = new THREE. MeshPhongMaterial( { color: 0xfbfaf3 } );
     var torus = new THREE.Mesh( torusGeometry, torusMaterial );
     torus.position.set( 0, 0, -5);
     scene.add( torus );
