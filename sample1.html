@@ -32,11 +32,11 @@
     var geometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
     var material = new THREE.MeshPhongMaterial({ color: 0xffffff });
     var box = new THREE.Mesh(geometry, material);
-    box.position.set = ( 2, 0, -5);
+    box.position.set = ( , 0, -5);
     scene.add(box);
   
     //ドーナッツ
-    var torusGeometry = new THREE.TorusGeometry( 0.25, 0.2, 16, 100 ); 
+    var torusGeometry = new THREE.TorusGeometry( 0.25, 0.05, 16, 100 ); 
     //半径、ドーナッツの太さ、ドーナッツのチューブ方向の分割数、水平方向の分割数
     var torusMaterial = new THREE. MeshPhongMaterial( { color: 0xffffff } );
     var torus = new THREE.Mesh( torusGeometry, torusMaterial );
@@ -52,6 +52,7 @@
     directionalLight1.position.set(1, 1, 1);
     // シーンに追加
     scene.add(directionalLight1);
+    
     // 平行光源2
     //var directionalLight2 = new THREE.DirectionalLight(0xffffff);
     //directionalLight2.position.set(-1, 1, 1);
@@ -62,7 +63,7 @@
     var update = function() {
       requestAnimationFrame(update);
   
-      // 箱を回転させる
+      // ドーナッツを回転させる
       torus.rotation.x += 0.01;
       torus.rotation.y += 0.01;
   
