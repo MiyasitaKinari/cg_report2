@@ -52,6 +52,14 @@
     torus.position.set( 0, 0, -5);
     scene.add( torus );
     
+    //球を作成
+    var sphereGeometry = new THREE.SphereGeometry( 0.25, 64, 64 ); 
+    //半径、垂直方向の分割数、水平方向の分割数
+    var sphereMaterial = new THREE. MeshPhongMaterial( {color: 0xffffff} );
+    var sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
+    sphere.position.set( 0, 1, -5 );
+    scene.add( sphere );
+    
     //環境光源
     const light = new THREE.AmbientLight(0xFFFFFF);
     scene.add(light);
