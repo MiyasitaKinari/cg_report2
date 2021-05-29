@@ -94,6 +94,23 @@
     const spotlight = new THREE.SpotLight(0xFFFFFF);
     spotlight.position.set(5, 0, -5);
     scene.add(spotlight);
+    
+    // ヘルパーを作成
+const lightHelper = new THREE.SpotLightHelper(light);
+scene.add(lightHelper);
+
+tick();
+
+// 毎フレーム時に実行されるループイベントです
+function tick() {
+    // レンダリング
+    renderer.render(scene, camera);
+
+    // ヘルパーを更新
+    lightHelper.update();
+
+    requestAnimationFrame(tick);
+}
   
     // 初回実行
     var update = function() {
