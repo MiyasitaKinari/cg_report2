@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>sample1</title>
+  <title>sample4</title>
 
   <!-- three.jsを読み込む(ローカル) -->
   <!-- <script src="./three.js"></script> -->
@@ -52,9 +52,9 @@
     torus.position.set( 0, 0, -5);
     scene.add( torus );
     
-    //環境光源
-    const light = new THREE.AmbientLight(0xFFFFFF);
-    scene.add(light);
+    // スポットライト光源
+    const spotlight = new THREE.SpotLight(0xFFFFFF);
+    scene.add(spotlight);
   
     // 初回実行
     var update = function() {
