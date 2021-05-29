@@ -52,9 +52,10 @@
     torus.position.set( 0, 0, -5);
     scene.add( torus );
     
-    //環境光源
-    const light = new THREE.AmbientLight(0xFFFFFF);
-    scene.add(light);
+    //点光源
+    const pointlight = new THREE.PointLight(0xFFFFFF);
+    pointlight.position.set(0, 0, 5);
+    scene.add(pointlight);
   
     // 初回実行
     var update = function() {
