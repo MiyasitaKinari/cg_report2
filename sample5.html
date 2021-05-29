@@ -53,8 +53,8 @@
     scene.add( torus );
     
     //矩形光源
-    const rectarealight = new THREE.RectAreaLight(0xFFFFFF, 5.0, 10, 10);
-    rectarealight.position.set(0, 0, 5);
+    const rectarealight = new THREE.RectAreaLight(0xFFFFFF);
+    rectarealight.position.x = 5;
     scene.add(rectarealight);
   
     // 初回実行
