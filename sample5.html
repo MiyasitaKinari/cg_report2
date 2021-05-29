@@ -52,9 +52,9 @@
     torus.position.set( 0, 0, -5);
     scene.add( torus );
     
-    const rectlight = new THREE.RectAreaLight(0xFFFFFF, 1, 10, 10);
-    rectlight.position.set(0, 0, 5);
-    scene.add(rectlight);
+    const rectarealight = new THREE.RectAreaLight(0xFFFFFF, 5.0, 10, 10);
+    //rectarealight.position.set(0, 0, 5);
+    scene.add(rectarealight);
   
     // 初回実行
     var update = function() {
