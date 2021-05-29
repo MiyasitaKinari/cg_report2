@@ -51,32 +51,10 @@
     var torus = new THREE.Mesh( torusGeometry, torusMaterial );
     torus.position.set( 0, 0, -5);
     scene.add( torus );
-
-    
-
-
-  
-    // 平行光源1
-    var directionalLight1 = new THREE.DirectionalLight(0xffffff);
-    directionalLight1.position.set(2, 2, 2);
-    // シーンに追加
-    scene.add(directionalLight1);
-    
-    // 平行光源2
-    //var directionalLight2 = new THREE.DirectionalLight(0xffffff);
-    //directionalLight2.position.set(-2, 0, -5);
-    // シーンに追加
-    //scene.add(directionalLight2);
-    
-    //平行光源3
-    //var directionalLight3 = new THREE.DirectionalLight(0xffffff);
-    //directionalLight3.position.set(0, 0, -4);
-    // シーンに追加
-    //scene.add(directionalLight3);
     
     //環境光源
-    //const light = new THREE.AmbientLight(0xFFFFFF);
-    //scene.add(light);
+    const light = new THREE.AmbientLight(0xFFFFFF);
+    scene.add(light);
   
     // 初回実行
     var update = function() {
