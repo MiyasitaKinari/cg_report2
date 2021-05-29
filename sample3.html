@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>sample1</title>
+
+  <!-- three.jsを読み込む(ローカル) -->
+  <!-- <script src="./three.js"></script> -->
+  <!-- three.jsを読み込む(CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
+
+</head>
+<body>
+ <script>
+  var init = function() {
+
+    var width = 800,
+        height = 600;
+  
+    // レンダラーを作成
+    var renderer = new THREE.WebGLRenderer();
+    renderer.setSize(width, height);
+    document.body.appendChild(renderer.domElement);
+  
+    // シーンを作成
+    var scene = new THREE.Scene();
+  
+    // カメラを作成
+    var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
+    
+    //箱を作成
+    var geometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
+    var material = new THREE.MeshPhongMaterial({ color: 0xfbfaf3 });
+    var box = new THREE.Mesh(geometry, material);
+    box.position.x = 1;
+    box.position.z = -5;
+    scene.add(box);
+    
+    //角錐を作成
+    var coneGeometry = new THREE.ConeGeometry( 0.25, 0.5, 5 ); 
+    //半径、高さ、底面の分割数
+    var coneMaterial = new THREE. MeshPhongMaterial( {color: 0xfbfaf3} );
+    var cone = new THREE.Mesh( coneGeometry, coneMaterial );
+    cone.position.set( -1, 0, -5 );
+    scene.add( cone );
+  
+    //トーラスを作成
+    var torusGeometry = new THREE.TorusGeometry( 0.25, 0.1, 16, 100 ); 
+    //半径、ドーナッツの太さ、ドーナッツのチューブ方向の分割数、水平方向の分割数
+    var torusMaterial = new THREE. MeshPhongMaterial( { color: 0xfbfaf3 } );
+    var torus = new THREE.Mesh( torusGeometry, torusMaterial );
+    torus.position.set( 0, 0, -5);
+    scene.add( torus );
+    
+    //環境光源
+    const light = new THREE.AmbientLight(0xFFFFFF);
+    scene.add(light);
+  
+    // 初回実行
+    var update = function() {
+      requestAnimationFrame(update);
+      
+      //箱を回転させる
+      box.rotation.x += 0.01;
+      box.rotation.y += 0.01;
+      
+      //箱2を回転させる
+      cone.rotation.x += 0.01;
+      cone.rotation.y += 0.01;
+  
+      // ドーナッツを回転させる
+      torus.rotation.x += 0.01;
+      torus.rotation.y += 0.01;
+  
+      renderer.render(scene, camera);
+    };
+    update();
+  }
+  window.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
