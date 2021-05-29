@@ -52,9 +52,11 @@
     torus.position.set( 0, 0, -5);
     scene.add( torus );
     
-    //環境光源
-    const light = new THREE.AmbientLight(0xFFFFFF);
-    scene.add(light);
+    // 平行光源1
+    var directionalLight1 = new THREE.DirectionalLight(0xffffff);
+    directionalLight1.position.set(2, 2, -5);
+    // シーンに追加
+    scene.add(directionalLight1);
   
     // 初回実行
     var update = function() {
